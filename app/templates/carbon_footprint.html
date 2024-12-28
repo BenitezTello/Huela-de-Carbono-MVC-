@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellas de Carbono</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/huellas.css') }}">
+</head>
+<body>
+    <h2>Huellas de Carbono</h2>
+    {% if carbon_footprints %}
+        <table border="1">
+            <thead>
+                <tr>
+                    {% if role == 'admin' %}
+                        <th>ID Usuario</th>
+                        <th>Username</th>
+                    {% endif %}
+                    <th>Fecha de Cálculo</th>
+                    <th>Resultado</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for footprint in carbon_footprints %}
+                    <tr>
+                        {% if role == 'admin' %}
+                            <td>{{ footprint.id_usuario }}</td>
+                            <td>{{ footprint.username }}</td>
+                        {% endif %}
+                        <td>{{ footprint.fecha_calculo }}</td>
+                        <td>{{ footprint.resultado }}</td>
+                        <td>
+                            <a href="{{ url_for('user_routes.show_project', id_huella=footprint.id_huella) }}">Ver mi proyecto</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No se encontraron registros de huella de carbono.</p>
+    {% endif %}
+    <a href="{{ url_for('home') }}">Volver</a>
+</body>
+</html>

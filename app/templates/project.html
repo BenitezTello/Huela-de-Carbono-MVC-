@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Asignado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Proyecto Asignado</h2>
+        {% if project %}
+            <p><strong>Nombre:</strong> {{ project.nombre }}</p>
+            <p><strong>Descripción:</strong> {{ project.descripcion }}</p>
+            <p><strong>Estado:</strong> {{ project.estado }}</p>
+        {% else %}
+            <p>No se encontró ningún proyecto asociado.</p>
+        {% endif %}
+        <a href="{{ url_for('user_routes.show_carbon_footprint') }}">Volver</a>
+    </div>
+    <div class="wave"></div>
+</body>
+</html>

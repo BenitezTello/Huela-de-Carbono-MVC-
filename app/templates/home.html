@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>CARBONCOUNT</h1>
+        <p>MIDE TU HUELLA</p>
+        <a href="{{ url_for('user_routes.show_emission_form') }}" class="btn">Registrar Emisiones</a>
+        <a href="{{ url_for('user_routes.show_carbon_footprint') }}" class="btn">Ver Huella de Carbono</a>
+    </div>
+    <div class="wave"></div>
+</body>
+</html>

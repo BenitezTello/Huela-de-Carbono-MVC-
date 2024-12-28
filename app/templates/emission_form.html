@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Emisiones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/preguntas.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Registro de Emisiones</h2>
+        <form method="POST" action="{{ url_for('user_routes.save_emission') }}">
+            <input type="text" name="datos" placeholder="Descripción de la emisión" required>
+            <input type="date" name="fecha_monitoreo" required>
+            <input type="number" name="energia" placeholder="Energía consumida" required>
+            <input type="number" name="transporte" placeholder="Transporte usado" required>
+            <input type="number" name="recursos_naturales" placeholder="Recursos Naturales" required>
+            <input type="number" name="residuos" placeholder="Residuos producidos" required>
+            <div class="buttons">
+                <button type="submit">Guardar Emisión</button>
+            </div>
+        </form>
+    </div>
+    <div class="wave"></div>
+</body>
+</html>

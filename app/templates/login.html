@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wave"></div>
+        <div class="content">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/Carboncount.png') }}" alt="CarbonCount Logo">
+            </div>
+            <h1 class="welcome">¡Hola!</h1>
+            <form method="POST" action="{{ url_for('user_routes.login') }}" class="form">
+                <input type="text" placeholder="Correo electrónico" name="username" required>
+                <input type="password" placeholder="Contraseña" name="password" required>
+                <a href="#" class="forgot">Olvidé mi contraseña</a>
+                <div class="remember">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Recordar</label>
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="btn-login">Iniciar sesión</button>
+                </div>
+            </form>
+            <p class="register">¿No tienes una cuenta? <a href="{{ url_for('user_routes.show_register_form') }}">Registrarse</a></p>
+        </div>
+    </div>
+</body>
+</html>

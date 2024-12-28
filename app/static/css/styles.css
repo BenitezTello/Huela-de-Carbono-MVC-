@@ -1,0 +1,71 @@
+/* app/static/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #4CAF50;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #45a049;
+}
+
+.container {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+.flash-message {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.flash-message.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
